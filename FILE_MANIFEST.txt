@@ -1,0 +1,98 @@
+PacBio Integration Site Pipeline - File Manifest
+================================================
+
+CORE PIPELINE FILES
+-------------------
+main.nf                 Main Nextflow workflow file (DSL2)
+                        - Defines all processes and workflow logic
+                        - Validated with 'nextflow lint'
+
+nextflow.config         Default Nextflow configuration
+                        - Base configuration for all runs
+                        - Container definitions per process
+                        - Docker & Singularity profiles
+                        - Default resource allocations
+
+custom.config           SLURM cluster-specific configuration
+                        - Overrides for your HPC environment
+                        - Singularity cache and binds
+                        - Cluster queue and resource settings
+                        - Use with: -c custom.config
+
+EXECUTION SCRIPTS
+-----------------
+submit.sh               SLURM job submission script (EXECUTABLE)
+                        - Loads required modules
+                        - Activates conda environment
+                        - Submits pipeline to SLURM queue
+                        - Usage: sbatch submit.sh
+
+run_example.sh          Local Docker execution example (EXECUTABLE)
+                        - Example command for local testing
+                        - Uses Docker profile
+                        - Shows all required parameters
+
+verify_setup.sh         Setup verification script (EXECUTABLE)
+                        - Checks all required files present
+                        - Verifies executable permissions
+                        - Confirms Nextflow installation
+
+DATA FILES
+----------
+samplesheet.csv         Example input samplesheet
+                        - Lists 4 samples: bc2085-bc2089
+                        - Format: sample,fastq
+                        - Template for your data
+
+DOCUMENTATION
+-------------
+README.md               Complete pipeline documentation
+                        - Pipeline overview and features
+                        - Usage instructions
+                        - Input/output descriptions
+                        - Configuration guide
+                        - Troubleshooting tips
+
+GITHUB_SETUP.md         GitHub repository setup guide
+                        - Step-by-step instructions
+                        - Git commands to create repo
+                        - Repository structure guidelines
+                        - Collaboration best practices
+
+SETUP_SUMMARY.md        Quick reference setup guide
+                        - What's been created
+                        - Key changes made
+                        - Next steps checklist
+                        - Testing instructions
+
+FILE_MANIFEST.txt       This file - complete file listing
+
+LICENSE                 MIT License
+                        - Open source license terms
+                        - Permissions and limitations
+
+CONFIGURATION
+-------------
+.gitignore              Git ignore patterns
+                        - Excludes work directories
+                        - Ignores Nextflow cache
+                        - Prevents committing results
+
+CONTAINER IMAGES (Referenced in configs)
+-----------------------------------------
+bumproo/nanoplotchopper     For NANOPLOT_QC process
+bumproo/general_genomics    For all other processes
+
+FILE COUNT
+----------
+Total: 14 files
+- Nextflow: 1 (main.nf)
+- Config: 2 (nextflow.config, custom.config)
+- Executable scripts: 3 (submit.sh, run_example.sh, verify_setup.sh)
+- Documentation: 4 (README.md, GITHUB_SETUP.md, SETUP_SUMMARY.md, FILE_MANIFEST.txt)
+- Data: 1 (samplesheet.csv)
+- Git: 1 (.gitignore)
+- License: 1 (LICENSE)
+- Metadata: 1 (this file)
+
+ALL FILES ARE READY FOR GIT COMMIT AND GITHUB PUSH!

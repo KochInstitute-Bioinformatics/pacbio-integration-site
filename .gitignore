@@ -1,0 +1,36 @@
+# Nextflow work directory
+work/
+
+# Nextflow output directories
+results/
+sorted_bams/
+selected_fastq/
+nanoplot/
+combined_references/
+pipeline_info/
+
+# Nextflow hidden files
+.nextflow/
+.nextflow.log*
+.nextflow.pid
+
+# Python
+__pycache__/
+*.pyc
+
+# R
+.Rhistory
+.RData
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*~
