@@ -180,7 +180,7 @@ workflow {
     
     // Parse samplesheet
     def samples = parseSamplesheet(params.samplesheet)
-    samples_ch = channel.of(samples)
+    samples_ch = channel.fromList(samples)
     
     // Create file channels for reference files
     vector_fasta_ch = channel.fromPath(params.vector_fasta, checkIfExists: true)
